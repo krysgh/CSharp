@@ -7,16 +7,44 @@ List<Book> books = new List<Book> ();
 int opMenu;
 
 string filePath = "biblioteca.txt";
-string directoryPath = @"C:\Arquivos";
+string directoryPath = @"C:\Arquivos\";
 var fullPath = Path.Combine(directoryPath, filePath);
+
+try
+{
+    if (!Directory.Exists(directoryPath))
+    {
+        Directory.CreateDirectory(directoryPath);
+    }
+
+    if (File.Exists(fullPath))
+    {
+        using (StreamReader reader = new StreamReader(fullPath))
+        {
+            string line;
+
+            while ((line = reader.ReadLine()!) != null)
+            {
+                var dado = line.Split('|');
+                books.Add(new Book(dado[0], dado[1], dado[2]));
+            }
+        }
+    }
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.StackTrace);
+    Console.WriteLine(e.Message);
+}
+
 
 int ShowMainMenu()
 {
     Console.WriteLine ("=== CADASTRO DE LIVROS ===");
-    Console.WriteLine("1 - Adicionar Livro");
-    Console.WriteLine("2 - Listar Livros");
-    Console.WriteLine("3 - Editar Livro");
-    Console.WriteLine("4 - Deletar Livro");
+    Console.WriteLine("1 - Adicionar livro");
+    Console.WriteLine("2 - Listar livros");
+    Console.WriteLine("3 - Editar titulo");
+    Console.WriteLine("4 - Deletar livro");
     Console.WriteLine("5 - Salvar e sair");
     Console.Write("\nInforme a opção desejada: ");
     return Convert.ToInt32(Console.ReadLine());
@@ -105,7 +133,7 @@ void DeleteBook()
 
 void SaveAndLeave()
 {
-    StreamWriter writer = new StreamWriter(fullPath, append: true);
+    StreamWriter writer = new StreamWriter(fullPath);
 
     using (writer)
     {
@@ -117,22 +145,6 @@ void SaveAndLeave()
     }
 
 }
-
-
-
-try
-{
-    if (!Directory.Exists(directoryPath))
-    {
-        Directory.CreateDirectory(directoryPath);
-    }
-}
-catch (Exception e)
-{
-    Console.WriteLine(e.StackTrace);
-    Console.WriteLine(e.Message);
-}
-
 
 do
 {

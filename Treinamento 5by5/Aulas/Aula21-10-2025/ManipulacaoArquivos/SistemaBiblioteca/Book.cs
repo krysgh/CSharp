@@ -21,14 +21,8 @@ namespace SistemaBiblioteca
         }
 
         public string GetTitle() { return this.Title; }
-        public string GetAuthor() {  return this.Author; }
-        public string GetCategory() {  return this.Category; }
-
 
         public void SetTitle(string title) { this.Title= title; }
-        public void SetAuthor(string author) { this.Author= author; }
-        public void SetCategory(string category) {  this.Category= category;}
-
 
         public override string ToString()
         {
