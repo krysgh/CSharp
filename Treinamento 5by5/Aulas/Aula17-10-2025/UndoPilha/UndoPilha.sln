@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoPilha", "UndoPilha\UndoPilha.csproj", "{945C450A-BE20-4EAA-AD29-D82EB7B11E27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaDeContatos", "ListaDeContatos\ListaDeContatos.csproj", "{9642D030-6C8D-45B1-8CD1-CA8F4AB1C969}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{945C450A-BE20-4EAA-AD29-D82EB7B11E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945C450A-BE20-4EAA-AD29-D82EB7B11E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945C450A-BE20-4EAA-AD29-D82EB7B11E27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9642D030-6C8D-45B1-8CD1-CA8F4AB1C969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9642D030-6C8D-45B1-8CD1-CA8F4AB1C969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9642D030-6C8D-45B1-8CD1-CA8F4AB1C969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9642D030-6C8D-45B1-8CD1-CA8F4AB1C969}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
